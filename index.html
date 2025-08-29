@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediHub : Le Futur de la Santé Connectée en Afrique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D1117;
+            background-image: radial-gradient(circle at 1px 1px, #1F2937 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .card {
+            background-color: rgba(31, 41, 55, 0.5);
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+            backdrop-filter: blur(10px);
+        }
+        .card:hover {
+            border-color: #00A3FF;
+            box-shadow: 0 0 20px rgba(0, 163, 255, 0.4);
+        }
+        .phone-mockup {
+            border: 10px solid #2d3748;
+            border-radius: 50px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            aspect-ratio: 9 / 19.5;
+            width: 100%;
+            max-width: 450px;
+            margin: auto;
+            transition: all 0.3s ease;
+        }
+        .phone-mockup:hover {
+            transform: scale(1.02);
+        }
+        .phone-screen {
+            background-color: #111827;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 15px 70px 15px;
+        }
+        .story-number {
+            font-size: 6rem;
+            font-weight: 700;
+            color: rgba(55, 65, 81, 0.3);
+            position: absolute;
+            top: -2rem;
+            left: 1rem;
+            z-index: 0;
+            line-height: 1;
+        }
+        .story-content {
+            position: relative;
+            z-index: 1;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 30px;
+            color: #9CA3AF;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+        .nav-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid #374151;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #9CA3AF;
+        }
+        .nav-item.active {
+            color: #00A3FF;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(0, 163, 255, 0.5), 0 0 5px rgba(0, 196, 167, 0.5) inset;
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(0, 163, 255, 0.9), 0 0 10px rgba(0, 196, 167, 0.7) inset;
+            }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
+        .phone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            height: 30px;
+            position: absolute;
+            top: 35px;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-20 card" style="animation-delay: 0.1s;">
+            <div class="flex justify-center items-center gap-4 mb-4">
+                 <div class="w-20 h-20 border-2 border-[#00A3FF] rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-lg" style="box-shadow: 0 0 20px #00A3FF;">
+                    <span>+</span>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight">MediHub</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-[#00A3FF] mt-2">3 Histoires qui changent la vie d'un Patient et de son Médecin</h2>
+            <p class="mt-6 max-w-3xl mx-auto text-gray-400">
+                Plongez dans l'expérience MediHub. Nous ne montrons pas 100 fonctionnalités, nous racontons 3 histoires qui changent la vie des patients et des médecins en Afrique.
+            </p>
+        </header>
+
+        <section id="story1" class="mb-20 card p-8 md:p-12 relative" style="animation-delay: 0.3s;">
+            <div class="story-number">01</div>
+            <div class="story-content grid grid-cols-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 md:mb-12">
+                    <div class="phone-mockup">
+                        <div class="phone-screen !p-0">
+                            <div class="status-bar !text-white z-20"><span>9:41</span><span>📶🔋</span></div>
+                            <div class="h-52 bg-gradient-to-br from-gray-900 to-gray-800 p-5 pt-12">
+                                <p class="text-white font-bold text-sm absolute top-10 left-5">MediHub</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center font-bold text-2xl border-2 border-gray-600">P</div>
+                                    <div>
+                                        <p class="text-xl font-bold text-white">Bonjour Pape</p>
+                                        <p class="text-sm text-gray-400">Gérez votre santé</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow -mt-20">
+                                <div class="bg-gradient-to-r from-[#00A3FF] to-[#00C4A7] text-white p-5 rounded-2xl shadow-lg flex items-center justify-between mb-5">
+                                    <div>
+                                        <h3 class="font-bold text-lg">Passeport Santé</h3>
+                                        <p class="text-sm">Partagez vos données</p>
+                                    </div>
+                                    <span class="text-5xl">🔑</span>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded-2xl mb-5">
+                                    <h4 class="font-semibold text-base mb-2">Prochain RDV</h4>
+                                    <p class="text-sm">Dr. A. Fall - 31/08 à 10h30</p>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded-2xl">
+                                    <h4 class="font-semibold text-base mb-2">Mes Assurances</h4>
+                                    <p class="text-sm text-gray-400">AXA - Police #7520</p>
+                                </div>
+                            </div>
+                            <div class="nav-bar"><div class="nav-item active"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Soins</span></div><div class="nav-item"><div class="text-2xl">💬</div><span class="mt-1 text-xs">Messages</span></div></div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-screen text-center !p-5 !pt-12">
+                             <div class="status-bar"><span>9:42</span><span>📶🔋</span></div>
+                             <p class="text-lg font-semibold text-white mb-2">Partage en cours...</p>
+                             <p class="text-sm text-gray-500 mb-5">Présentez ce code au professionnel de santé</p>
+                             <div class="flex-grow flex items-center justify-center bg-white p-5 rounded-3xl">
+                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://medihub.example.com" alt="QR Code" class="w-full h-auto object-cover"/>
+                             </div>
+                             <div class="mt-5 bg-gray-800 p-4 rounded-2xl">
+                                <p class="text-base text-gray-400">Accès expire dans : <span class="font-bold text-yellow-400">59:45</span></p>
+                             </div>
+                             <div class="nav-bar"><div class="nav-item active"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Soins</span></div><div class="nav-item"><div class="text-2xl">💬</div><span class="mt-1 text-xs">Messages</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="md:text-center md:max-w-4xl md:mx-auto">
+                    <h3 class="text-4xl font-bold text-white mb-4">La Souveraineté du Patient</h3>
+                    <p class="text-[#00C4A7] font-semibold text-2xl mb-4">Le "Passeport Santé Souverain"</p>
+                    <p class="text-gray-300 text-lg">
+                        C'est la fin des "orphelins médicaux". Nous redonnons au patient le contrôle total et sécurisé de ses données de santé. En deux clics, il peut partager son historique complet avec n'importe quel professionnel, assurant une continuité des soins sans précédent.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="story2" class="mb-20 card p-8 md:p-12 relative" style="animation-delay: 0.5s;">
+            <div class="story-number" style="left: auto; right: 1rem;">02</div>
+             <div class="story-content grid grid-cols-1">
+                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 md:mb-12">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                           <div class="status-bar"><span>10:15</span><span>📶🔋</span></div>
+                            <p class="text-base text-gray-400">Dossier Patient</p>
+                            <p class="text-2xl font-bold text-white mb-5">Pape Gueye, 58a</p>
+                            <div class="bg-gray-800 p-3 rounded-2xl mb-4">
+                                <p class="text-sm text-gray-400">Glycémie (7 jours)</p>
+                                <div class="h-16 w-full mt-2 flex justify-between items-end gap-1 px-1">
+                                    <div class="w-full bg-green-500 rounded-t-sm" style="height: 40%"></div><div class="w-full bg-green-500 rounded-t-sm" style="height: 60%"></div><div class="w-full bg-orange-500 rounded-t-sm" style="height: 50%"></div><div class="w-full bg-red-500 rounded-t-sm" style="height: 80%"></div><div class="w-full bg-orange-500 rounded-t-sm" style="height: 70%"></div><div class="w-full bg-green-500 rounded-t-sm" style="height: 60%"></div><div class="w-full bg-green-500 rounded-t-sm" style="height: 65%"></div>
+                                </div>
+                            </div>
+                             <div class="bg-gray-800 p-4 rounded-2xl mb-4"><h4 class="font-semibold text-base">Conditions actives</h4><p class="text-sm text-gray-400 mt-1">Diabète T2, Hypertension</p></div>
+                             <div class="bg-gray-800 p-4 rounded-2xl"><h4 class="font-semibold text-base">Dernière consultation</h4><p class="text-sm text-gray-400 mt-1">25/08/2025 - Dr. A. Fall</p></div>
+                            <div class="absolute bottom-24 right-6">
+                                <button class="w-20 h-20 text-center bg-gradient-to-r from-[#00A3FF] to-[#00C4A7] text-white font-bold rounded-full shadow-lg text-4xl flex items-center justify-center pulse-glow">🧠</button>
+                            </div>
+                            <div class="nav-bar"><div class="nav-item"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item active"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Patients</span></div><div class="nav-item"><div class="text-2xl">⚙️</div><span class="mt-1 text-xs">Ajustes</span></div></div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-screen text-left">
+                             <div class="status-bar"><span>10:16</span><span>📶🔋</span></div>
+                             <p class="text-lg font-bold text-white mb-4 flex items-center gap-2"><span>🧠</span>Synthèse IA</p>
+                             <div class="flex-grow bg-gray-900 p-4 rounded-2xl text-sm text-gray-300 space-y-4">
+                                 <p>Patient 58a, diabète T2 (2019). Ttt: Metformine.</p>
+                                 <div class="border-l-4 border-yellow-400 pl-3">
+                                    <p class="font-bold text-yellow-400">Alerte : Tendance glycémique à la hausse (+15%) sur 3 sem.</p>
+                                 </div>
+                                 <p><strong>Corrélation IA :</strong> Baisse d'activité physique détectée via montre connectée.</p>
+                                 <div class="border-l-4 border-cyan-400 pl-3 bg-cyan-900/20 py-2">
+                                     <p class="font-bold text-cyan-400">Recommandation IA : Suggérer un ajustement de Metformine et programmer un suivi.</p>
+                                 </div>
+                                 <p class="text-xs text-gray-500 pt-3 border-t border-gray-700">Source: Apple Health, EMR.</p>
+                             </div>
+                             <div class="mt-4 flex gap-3">
+                                <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Accepter</button>
+                                <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Modifier</button>
+                             </div>
+                            <div class="nav-bar"><div class="nav-item"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item active"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Patients</span></div><div class="nav-item"><div class="text-2xl">⚙️</div><span class="mt-1 text-xs">Ajustes</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:text-center md:max-w-4xl md:mx-auto">
+                    <h3 class="text-4xl font-bold text-white mb-4">Le Médecin Augmenté</h3>
+                    <p class="text-[#00C4A7] font-semibold text-2xl mb-4">Le "Jumeau Numérique" en action</p>
+                    <p class="text-gray-300 text-lg">
+                        Nous offrons aux médecins un gain de temps inestimable et une profondeur d'analyse inégalée. En dialoguant avec le Jumeau Numérique du patient, l'IA synthétise les données complexes et révèle des corrélations invisibles, permettant des décisions plus rapides et plus éclairées.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+       <section id="story3" class="mb-20 card p-8 md:p-12 relative" style="animation-delay: 0.7s;">
+            <div class="story-number">03</div>
+            <div class="story-content grid grid-cols-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 md:mb-12">
+                    <div class="phone-mockup">
+                        <div class="phone-screen items-center">
+                            <div class="status-bar"><span>11:05</span><span>📶🔋</span></div>
+                            <p class="text-center text-lg font-bold text-white mb-5">Analyse Dermato IA</p>
+                            <div class="w-full aspect-square flex flex-col items-center justify-center border-2 border-dashed border-gray-600 rounded-3xl p-5 bg-gray-800/50">
+                                <p class="text-6xl">📷</p>
+                                <p class="text-base text-gray-300 mt-4">Prendre une photo</p>
+                                <p class="text-sm text-gray-500 mt-2">ou téléverser</p>
+                            </div>
+                            <div class="nav-bar"><div class="nav-item"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item active"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Soins</span></div><div class="nav-item"><div class="text-2xl">💬</div><span class="mt-1 text-xs">Messages</span></div></div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-screen text-left !p-0">
+                             <div class="status-bar !text-white z-20"><span>11:06</span><span>📶🔋</span></div>
+                             <div class="h-52 bg-cover bg-center" style="background-image: url('https://placehold.co/400x250/666/FFF?text=Lésion+cutanée')">
+                                <div class="w-full h-full bg-black/40 flex items-end p-4">
+                                    <h3 class="text-white font-bold text-lg">Résultats de l'Analyse IA</h3>
+                                </div>
+                             </div>
+                             <div class="p-5 flex-grow flex flex-col">
+                                 <div class="text-base space-y-4">
+                                     <div class="flex justify-between items-center bg-red-900/50 p-4 rounded-xl"><span class="font-bold text-red-400">Prob. Lésion Maligne</span><span class="font-bold text-red-400">85%</span></div>
+                                     <div class="flex justify-between items-center bg-gray-800 p-3 rounded-xl"><span>1. Mélanome</span><span>60%</span></div>
+                                     <div class="flex justify-between items-center bg-gray-800 p-3 rounded-xl"><span>2. Kératose</span><span>25%</span></div>
+                                 </div>
+                                 <div class="flex-grow mt-5 pt-5 border-t border-gray-700">
+                                     <h4 class="font-semibold text-base mb-3">Prochaines Étapes</h4>
+                                     <button class="w-full bg-blue-600 text-white py-3 rounded-xl text-base">RDV avec dermatologue</button>
+                                 </div>
+                                 <p class="text-center text-xs text-gray-600 mt-2">Avertissement : Aide à la décision. Ne remplace pas un avis médical qualifié.</p>
+                             </div>
+                            <div class="nav-bar"><div class="nav-item"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item active"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Soins</span></div><div class="nav-item"><div class="text-2xl">💬</div><span class="mt-1 text-xs">Messages</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="md:text-center md:max-w-4xl md:mx-auto">
+                    <h3 class="text-4xl font-bold text-white mb-4">L'IA en Aide au Diagnostic</h3>
+                    <p class="text-[#00C4A7] font-semibold text-2xl mb-4">La crédibilité de notre technologie</p>
+                    <p class="text-gray-300 text-lg">
+                        Nous démontrons la puissance de notre IA propriétaire avec des applications concrètes. Un simple upload d'image déclenche une analyse avancée, fournissant une aide à la décision cruciale pour les professionnels de santé, et accélérant le pré-diagnostic de manière spectaculaire.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pt-8 border-t border-gray-700">
+            <p class="text-gray-500">&copy; 2025 MediHub. L'avenir de la santé est connecté.</p>
+        </footer>
+
+    </main>
+    <script>
+       // Le script est conservé pour d'éventuelles futures interactions, mais aucun graphique n'est actuellement utilisé.
+    </script>
+</body>
+</html>
+
