@@ -241,21 +241,24 @@
                         <div class="phone-screen text-left">
                              <div class="status-bar"><span>10:16</span><span>📶🔋</span></div>
                              <p class="text-lg font-bold text-white mb-4 flex items-center gap-2"><span>🧠</span>Synthèse IA</p>
-                             <div class="flex-grow bg-gray-900 p-4 rounded-2xl text-sm text-gray-300 space-y-4">
-                                 <p>Patient 58a, diabète T2 (2019). Ttt: Metformine.</p>
-                                 <div class="border-l-4 border-yellow-400 pl-3">
-                                    <p class="font-bold text-yellow-400">Alerte : Tendance glycémique à la hausse (+15%) sur 3 sem.</p>
+                             <div class="flex-grow flex flex-col">
+                                 <div class="bg-gray-900 p-4 rounded-2xl text-sm text-gray-300 space-y-4">
+                                     <p>Patient 58a, diabète T2 (2019). Ttt: Metformine.</p>
+                                     <div class="border-l-4 border-yellow-400 pl-3">
+                                        <p class="font-bold text-yellow-400">Alerte : Tendance glycémique à la hausse (+15%) sur 3 sem.</p>
+                                     </div>
+                                     <p><strong>Corrélation IA :</strong> Baisse d'activité physique détectée via montre connectée.</p>
+                                     <div class="border-l-4 border-cyan-400 pl-3 bg-cyan-900/20 py-2">
+                                         <p class="font-bold text-cyan-400">Recommandation IA : Suggérer un ajustement de Metformine et programmer un suivi.</p>
+                                     </div>
+                                     <p class="text-xs text-gray-500 pt-3 border-t border-gray-700">Source: Apple Health, EMR.</p>
                                  </div>
-                                 <p><strong>Corrélation IA :</strong> Baisse d'activité physique détectée via montre connectée.</p>
-                                 <div class="border-l-4 border-cyan-400 pl-3 bg-cyan-900/20 py-2">
-                                     <p class="font-bold text-cyan-400">Recommandation IA : Suggérer un ajustement de Metformine et programmer un suivi.</p>
+                                 <div class="flex-grow"></div>
+                                 <div class="flex gap-3">
+                                    <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Accepter</button>
+                                    <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Modifier</button>
                                  </div>
-                                 <p class="text-xs text-gray-500 pt-3 border-t border-gray-700">Source: Apple Health, EMR.</p>
-                             </div>
-                             <div class="mt-4 flex gap-3">
-                                <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Accepter</button>
-                                <button class="flex-1 bg-gray-700 text-sm py-3 rounded-xl">Modifier</button>
-                             </div>
+                            </div>
                             <div class="nav-bar"><div class="nav-item"><div class="text-2xl">👤</div><span class="mt-1 text-xs">Accueil</span></div><div class="nav-item active"><div class="text-2xl">🩺</div><span class="mt-1 text-xs">Patients</span></div><div class="nav-item"><div class="text-2xl">⚙️</div><span class="mt-1 text-xs">Ajustes</span></div></div>
                         </div>
                     </div>
@@ -300,7 +303,8 @@
                                      <div class="flex justify-between items-center bg-gray-800 p-3 rounded-xl"><span>1. Mélanome</span><span>60%</span></div>
                                      <div class="flex justify-between items-center bg-gray-800 p-3 rounded-xl"><span>2. Kératose</span><span>25%</span></div>
                                  </div>
-                                 <div class="flex-grow mt-5 pt-5 border-t border-gray-700">
+                                 <div class="flex-grow"></div>
+                                 <div class="mt-5 pt-5 border-t border-gray-700">
                                      <h4 class="font-semibold text-base mb-3">Prochaines Étapes</h4>
                                      <button class="w-full bg-blue-600 text-white py-3 rounded-xl text-base">RDV avec dermatologue</button>
                                  </div>
